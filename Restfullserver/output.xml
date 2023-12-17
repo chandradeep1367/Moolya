@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.9.13 on win32)" generated="20231107 13:09:38.653" rpa="false" schemaversion="4">
+<suite id="s1" name="TC3 XML" source="C:\Users\Admin\PycharmProjects\Restfullserver\Testcases\TC3_XML.robot">
+<test id="s1-t1" name="Testcase1:" line="10">
+<kw name="Parse Xml" library="XML">
+<var>${xml_obj}</var>
+<arg>C:/Users/Admin/Desktop/employee.xml</arg>
+<doc>Parses the given XML file or string into an element structure.</doc>
+<msg timestamp="20231107 13:09:38.723" level="INFO">${xml_obj} = &lt;Element 'data' at 0x00000248F42219A0&gt;</msg>
+<status status="PASS" starttime="20231107 13:09:38.722" endtime="20231107 13:09:38.723"/>
+</kw>
+<kw name="Get Element Text" library="XML">
+<var>${emp_position}</var>
+<arg>${xml_obj}</arg>
+<arg>.//country[1]/year</arg>
+<doc>Returns all text of the element, possibly whitespace normalized.</doc>
+<msg timestamp="20231107 13:09:38.723" level="INFO">${emp_position} = 2008</msg>
+<status status="PASS" starttime="20231107 13:09:38.723" endtime="20231107 13:09:38.723"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${emp_position}</arg>
+<arg>2008</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20231107 13:09:38.724" endtime="20231107 13:09:38.724"/>
+</kw>
+<kw name="Get Element Text" library="XML">
+<var>${emp_position}</var>
+<arg>${xml_obj}</arg>
+<arg>.//country[2]/year</arg>
+<doc>Returns all text of the element, possibly whitespace normalized.</doc>
+<msg timestamp="20231107 13:09:38.724" level="INFO">${emp_position} = 2011</msg>
+<status status="PASS" starttime="20231107 13:09:38.724" endtime="20231107 13:09:38.724"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${emp_position}</arg>
+<arg>2011</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20231107 13:09:38.725" endtime="20231107 13:09:38.725"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${emp_position}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231107 13:09:38.725" endtime="20231107 13:09:38.725"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${emp_position}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231107 13:09:38.726" level="INFO">2011</msg>
+<status status="PASS" starttime="20231107 13:09:38.726" endtime="20231107 13:09:38.726"/>
+</kw>
+<kw name="Get Element Text" library="XML">
+<var>${emp_position1}</var>
+<arg>${xml_obj}</arg>
+<arg>.//country[3]/rank</arg>
+<doc>Returns all text of the element, possibly whitespace normalized.</doc>
+<msg timestamp="20231107 13:09:38.726" level="INFO">${emp_position1} = 68</msg>
+<status status="PASS" starttime="20231107 13:09:38.726" endtime="20231107 13:09:38.726"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${emp_position1}</arg>
+<arg>68</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20231107 13:09:38.727" endtime="20231107 13:09:38.727"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${emp_position1}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231107 13:09:38.728" endtime="20231107 13:09:38.728"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${emp_position1}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231107 13:09:38.728" level="INFO">68</msg>
+<status status="PASS" starttime="20231107 13:09:38.728" endtime="20231107 13:09:38.728"/>
+</kw>
+<kw name="Get Element Count" library="XML">
+<var>${count}</var>
+<arg>${xml_obj}</arg>
+<arg>.//country</arg>
+<doc>Returns and logs how many elements the given ``xpath`` matches.</doc>
+<msg timestamp="20231107 13:09:38.729" level="INFO">3 elements matched './/country'.</msg>
+<msg timestamp="20231107 13:09:38.729" level="INFO">${count} = 3</msg>
+<status status="PASS" starttime="20231107 13:09:38.728" endtime="20231107 13:09:38.729"/>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<arg>${count}</arg>
+<arg>3</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<msg timestamp="20231107 13:09:38.729" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20231107 13:09:38.729" endtime="20231107 13:09:38.729"/>
+</kw>
+<kw name="Element Attribute Should Be" library="XML">
+<arg>${xml_obj}</arg>
+<arg>name</arg>
+<arg>Panama</arg>
+<arg>.//country[3]</arg>
+<doc>Verifies that the specified attribute is ``expected``.</doc>
+<status status="PASS" starttime="20231107 13:09:38.729" endtime="20231107 13:09:38.730"/>
+</kw>
+<kw name="Element Attribute Should Be" library="XML">
+<arg>${xml_obj}</arg>
+<arg>name</arg>
+<arg>Liechtenstein</arg>
+<arg>.//country[1]</arg>
+<doc>Verifies that the specified attribute is ``expected``.</doc>
+<status status="PASS" starttime="20231107 13:09:38.730" endtime="20231107 13:09:38.730"/>
+</kw>
+<kw name="Get Child Elements" library="XML">
+<var>${child_elements}</var>
+<arg>${xml_obj}</arg>
+<arg>.//country[1]</arg>
+<doc>Returns the child elements of the specified element as a list.</doc>
+<msg timestamp="20231107 13:09:38.731" level="INFO">${child_elements} = [&lt;Element 'rank' at 0x00000248F4221A40&gt;, &lt;Element 'year' at 0x00000248F4221A90&gt;, &lt;Element 'gdppc' at 0x00000248F4221AE0&gt;, &lt;Element 'neighbor' at 0x00000248F4221B30&gt;, &lt;Element 'neighbor' at 0x00000248F...</msg>
+<status status="PASS" starttime="20231107 13:09:38.730" endtime="20231107 13:09:38.731"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>${child_elements}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<msg timestamp="20231107 13:09:38.731" level="INFO">Length is 5</msg>
+<status status="PASS" starttime="20231107 13:09:38.731" endtime="20231107 13:09:38.731"/>
+</kw>
+<kw name="Get Element Text" library="XML">
+<var>${rank}</var>
+<arg>${child_elements[0]}</arg>
+<doc>Returns all text of the element, possibly whitespace normalized.</doc>
+<msg timestamp="20231107 13:09:38.732" level="INFO">${rank} = 1</msg>
+<status status="PASS" starttime="20231107 13:09:38.732" endtime="20231107 13:09:38.732"/>
+</kw>
+<kw name="Get Element Text" library="XML">
+<var>${year}</var>
+<arg>${child_elements[1]}</arg>
+<doc>Returns all text of the element, possibly whitespace normalized.</doc>
+<msg timestamp="20231107 13:09:38.733" level="INFO">${year} = 2008</msg>
+<status status="PASS" starttime="20231107 13:09:38.732" endtime="20231107 13:09:38.733"/>
+</kw>
+<kw name="Get Element Text" library="XML">
+<var>${gdppc}</var>
+<arg>${child_elements[2]}</arg>
+<doc>Returns all text of the element, possibly whitespace normalized.</doc>
+<msg timestamp="20231107 13:09:38.734" level="INFO">${gdppc} = 141100</msg>
+<status status="PASS" starttime="20231107 13:09:38.733" endtime="20231107 13:09:38.734"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${rank}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231107 13:09:38.734" endtime="20231107 13:09:38.734"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${year}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231107 13:09:38.735" endtime="20231107 13:09:38.735"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${gdppc}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231107 13:09:38.736" endtime="20231107 13:09:38.736"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${rank}</arg>
+<arg>1</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20231107 13:09:38.736" endtime="20231107 13:09:38.736"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${year}</arg>
+<arg>2008</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20231107 13:09:38.737" endtime="20231107 13:09:38.737"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${gdppc}</arg>
+<arg>141100</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20231107 13:09:38.737" endtime="20231107 13:09:38.738"/>
+</kw>
+<status status="PASS" starttime="20231107 13:09:38.721" endtime="20231107 13:09:38.738"/>
+</test>
+<status status="PASS" starttime="20231107 13:09:38.655" endtime="20231107 13:09:38.739"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="TC3 XML">TC3 XML</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
