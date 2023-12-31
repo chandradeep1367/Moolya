@@ -7,9 +7,14 @@ class Selenium_operation:
         self.driver = driver
 
     # @wait_
-    def click_process(self, locator):
-        self.driver.findelement(locator).click()
+    def click_process(self, element_type, locator):
+        self.driver.find_element(element_type, locator).click()
 
     # @wait_
-    def send_keys_process(self, locators, *, value):
-        self.driver.find_element(*locators).send_keys(value)
+    def send_keys_process(self, element_type, locator, value):
+        self.driver.find_element(element_type, locator).send_keys(value)
+
+    def get_element_text(self, element_type, locator):
+        element = self.driver.find_element(element_type, locator)
+        value = element.text
+        return value
